@@ -3,12 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Web Của Tôi</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Trang Giới Thiệu Công Ty</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h1>Chào mừng đến với trang web của tôi!</h1>
-    <button id="btn">Nhấn vào tôi</button>
+    <header>
+        <h1>Công Ty Đầu Tư XYZ</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#" data-section="about">Giới Thiệu</a></li>
+            <li><a href="#" data-section="portfolio">Danh Mục Đầu Tư</a></li>
+            <li><a href="#" data-section="analysis">Kết Quả Phân Tích</a></li>
+            <li><a href="#" data-section="chart">Biểu Đồ</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about" class="container">
+        <h2>Giới Thiệu Công Ty</h2>
+        <p>Công ty XYZ chuyên về đầu tư tài chính với chiến lược tối ưu hóa lợi nhuận.</p>
+    </section>
+    
+    <section id="portfolio" class="container">
+        <h2>Danh Mục Đầu Tư Hiệu Quả</h2>
+        <ul>
+            <li>Cổ phiếu A - Tăng trưởng 15% năm qua</li>
+            <li>Trái phiếu B - Lợi suất 8%</li>
+            <li>Bất động sản C - Giá trị tăng 20%</li>
+        </ul>
+    </section>
+    
+    <section id="analysis" class="container">
+        <h2>Kết Quả Phân Tích</h2>
+        <p>Phân tích cho thấy danh mục hiện tại có tỷ suất lợi nhuận trung bình 12%.</p>
+    </section>
+    
+    <section id="chart" class="container">
+        <h2>Biểu Đồ Hiệu Suất Đầu Tư</h2>
+        <canvas id="investmentChart"></canvas>
+    </section>
+    
     <script src="script.js"></script>
 </body>
 </html>
