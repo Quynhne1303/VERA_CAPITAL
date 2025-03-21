@@ -27,13 +27,9 @@ nav ul li a {
     font-weight: bold;
 }
 
-.container {
-    display: none;
+section {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-}
-
-.active {
-    display: block;
+    margin: 20px;
 }
