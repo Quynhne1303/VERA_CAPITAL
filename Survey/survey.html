@@ -1,242 +1,343 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khảo Sát Rủi Ro Đầu Tư</title>
-    <link rel="stylesheet" href="sur_styles.css">
-</head>
-<body>
-    <h2>Khảo Sát Mức Độ Rủi Ro</h2>
-    <form id="surveyForm">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+      }
+
+      nav {
+        width: 250px;
+        background-color: #333;
+        color: white;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 20px;
+        overflow-y: auto;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      nav ul li {
+        padding: 15px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+      }
+
+      nav ul li a:hover {
+        background-color: #555;
+      }
+
+      .content {
+        flex: 1;
+        padding: 20px;
+        background-color: #f4f4f9;
+        margin-left: 250px;
+        min-height: 100vh;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      .question {
+        margin-bottom: 15px;
+      }
+
+      .result {
+        margin-top: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Giới Thiệu Công Ty</a></li>
+        <li>
+          <a href="../Customer/customer.html"
+            >Giới Thiệu Thông Tin Khách Hàng</a
+          >
+        </li>
+        <li>
+          <a href="survey.html">Kết quả bảng khảo sát khách hàng</a>
+        </li>
+        <li><a href="../portfolio.html">Danh Mục Đầu Tư</a></li>
+        <li><a href="../analysis.html">Kết Quả Phân Tích</a></li>
+        <li><a href="../chart.html">Biểu Đồ</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <h2>Khảo Sát Mức Độ Rủi Ro</h2>
+      <form id="surveyForm">
         <div class="question">
-        <p>1. Mục tiêu đầu tư của bạn là gì ?</p>
-        <label
-          ><input type="radio" name="q1" value="1" disabled /> A. Bảo toàn vốn và tránh
-          rủi ro </label
-        ><br />
-        <label
-          ><input type="radio" name="q1" value="2" disabled /> B. Tăng trưởng vốn ổn định
-          kết hợp với bảo toàn vốn </label
-        ><br />
-        <label
-          ><input type="radio" name="q1" value="3" disabled /> C. Tăng trưởng vốn nhanh
-          nhưng vẫn chú trọng đến an toàn một phần </label
-        ><br />
-        <label
-          ><input type="radio" name="q1" value="4" disabled /> D. Tìm kiếm lợi nhuận cực
-          cao mặc dù có rủi ro lớn
-        </label>
-      </div>
+          <p>1. What is your investment goal?</p>
+          <label
+            ><input type="radio" name="q1" value="1" disabled /> A. Capital
+            preservation and risk avoidance </label
+          ><br />
+          <label
+            ><input type="radio" name="q1" value="2" disabled /> B. Stable
+            capital growth combined with capital preservation </label
+          ><br />
+          <label
+            ><input type="radio" name="q1" value="3" disabled /> C. Rapid
+            capital growth while still prioritizing some safety </label
+          ><br />
+          <label
+            ><input type="radio" name="q1" value="4" disabled /> D. Seeking
+            extremely high returns despite high risks
+          </label>
+        </div>
 
-      <div class="question">
-        <p>
-          2. Nếu danh mục đầu tư của bạn giảm 20% trong thời gian ngắn, bạn sẽ
-          làm gì?
-        </p>
-        <label
-          ><input type="radio" name="q2" value="1" disabled /> A. Bán ra ngay để cắt lỗ </label
-        ><br />
-        <label
-          ><input type="radio" name="q2" value="2" disabled /> B. Cảm thấy lo lắng nhưng
-          giữ nguyên danh mục và chờ phục hồi </label
-        ><br />
-        <label
-          ><input type="radio" name="q2" value="3" disabled /> C. Xem đây là cơ hội để
-          mua vào thêm </label
-        ><br />
-        <label
-          ><input type="radio" name="q2" value="4" disabled /> D. Mua vào ngay lập tức vì
-          tin thị trường sẽ phục hồi
-        </label>
-      </div>
+        <div class="question">
+          <p>
+            2. If your investment portfolio drops 20% in a short time, what
+            would you do?
+          </p>
+          <label
+            ><input type="radio" name="q2" value="1" disabled /> A. Sell
+            immediately to cut losses </label
+          ><br />
+          <label
+            ><input type="radio" name="q2" value="2" disabled /> B. Feel worried
+            but keep the portfolio and wait for recovery </label
+          ><br />
+          <label
+            ><input type="radio" name="q2" value="3" disabled /> C. See this as
+            an opportunity to buy more </label
+          ><br />
+          <label
+            ><input type="radio" name="q2" value="4" disabled /> D. Buy
+            immediately because you believe the market will recover
+          </label>
+        </div>
 
-      <div class="question">
-        <p>3. Mức độ hiểu biết của bạn về thị trường tài chính là:</p>
-        <label
-          ><input type="radio" name="q3" value="1" disabled /> A. Rất ít kinh nghiệm </label
-        ><br />
-        <label
-          ><input type="radio" name="q3" value="2" disabled /> B. Hiểu biết cơ bản, mới
-          bắt đầu đầu tư </label
-        ><br />
-        <label
-          ><input type="radio" name="q3" value="3" disabled /> C. Trung bình – theo dõi
-          và nghiên cứu thường xuyên </label
-        ><br />
-        <label
-          ><input type="radio" name="q3" value="4" disabled /> D. Rất hiểu biết, có chiến
-          lược đầu tư riêng
-        </label>
-      </div>
+        <div class="question">
+          <p>3. How knowledgeable are you about the financial market?</p>
+          <label
+            ><input type="radio" name="q3" value="1" disabled /> A. Very little
+            experience </label
+          ><br />
+          <label
+            ><input type="radio" name="q3" value="2" disabled /> B. Basic
+            understanding, just starting to invest </label
+          ><br />
+          <label
+            ><input type="radio" name="q3" value="3" disabled /> C. Average –
+            regularly follow and research </label
+          ><br />
+          <label
+            ><input type="radio" name="q3" value="4" disabled /> D. Highly
+            knowledgeable, have own investment strategy
+          </label>
+        </div>
 
-      <div class="question">
-        <p>
-          4. Khoản tiền bạn sẵn sàng đầu tư (mà nếu mất đi vẫn đảm bảo cuộc
-          sống) chiếm bao nhiêu % tổng tài sản?
-        </p>
-        <label><input type="radio" name="q4" value="1" disabled /> A. Dưới 10% </label
-        ><br />
-        <label
-          ><input type="radio" name="q4" value="2" disabled /> B. Từ 10% đến 25% </label
-        ><br />
-        <label
-          ><input type="radio" name="q4" value="3" disabled /> C. Từ 25% đến 50% </label
-        ><br />
-        <label><input type="radio" name="q4" value="4" disabled /> D. Trên 50% </label>
-      </div>
+        <div class="question">
+          <p>
+            4. What percentage of your total assets are you willing to invest
+            (and still maintain your standard of living if lost)?
+          </p>
+          <label
+            ><input type="radio" name="q4" value="1" disabled /> A. Less than
+            10% </label
+          ><br />
+          <label
+            ><input type="radio" name="q4" value="2" disabled /> B. From 10% to
+            25% </label
+          ><br />
+          <label
+            ><input type="radio" name="q4" value="3" disabled /> C. From 25% to
+            50% </label
+          ><br />
+          <label
+            ><input type="radio" name="q4" value="4" disabled /> D. More than
+            50%
+          </label>
+        </div>
 
-      <div class="question">
-        <p>
-          5. Khi nghe tin về cơ hội đầu tư với lợi nhuận cao nhưng rủi ro lớn,
-          bạn sẽ:
-        </p>
-        <label
-          ><input type="radio" name="q5" value="1" disabled /> A. Không đầu tư vì quá rủi
-          ro </label
-        ><br />
-        <label
-          ><input type="radio" name="q5" value="2" disabled /> B. Đầu tư với số tiền nhỏ
-          để thử nghiệm </label
-        ><br />
-        <label
-          ><input type="radio" name="q5" value="3" disabled /> C. Đầu tư một phần nếu có
-          đủ thông tin và nghiên cứu kỹ </label
-        ><br />
-        <label
-          ><input type="radio" name="q5" value="4" disabled /> D. Đầu tư mạnh mẽ vì tin
-          rằng lợi nhuận sẽ bù đắp rủi ro
-        </label>
-      </div>
+        <div class="question">
+          <p>
+            5. When hearing about an investment opportunity with high returns
+            but high risk, you will:
+          </p>
+          <label
+            ><input type="radio" name="q5" value="1" disabled /> A. Not invest
+            because it's too risky </label
+          ><br />
+          <label
+            ><input type="radio" name="q5" value="2" disabled /> B. Invest a
+            small amount to test the waters </label
+          ><br />
+          <label
+            ><input type="radio" name="q5" value="3" disabled /> C. Invest
+            partially if enough information and thorough research is available </label
+          ><br />
+          <label
+            ><input type="radio" name="q5" value="4" disabled /> D. Invest
+            aggressively, believing that profits will outweigh the risks
+          </label>
+        </div>
 
-      <div class="question">
-        <p>6. Khi thị trường biến động mạnh, bạn thường:</p>
-        <label
-          ><input type="radio" name="q6" value="1" disabled /> A. Hoảng loạn và bán ra
-          ngay </label
-        ><br />
-        <label
-          ><input type="radio" name="q6" value="2" disabled /> B. Cảm thấy lo lắng nhưng
-          giữ bình tĩnh </label
-        ><br />
-        <label
-          ><input type="radio" name="q6" value="3" disabled /> C. Theo dõi sát sao và tìm
-          cơ hội mua vào </label
-        ><br />
-        <label
-          ><input type="radio" name="q6" value="4" disabled /> D. Tận dụng biến động để
-          đầu tư thêmSS
-        </label>
-      </div>
+        <div class="question">
+          <p>6. When the market fluctuates strongly, you usually:</p>
+          <label
+            ><input type="radio" name="q6" value="1" disabled /> A. Panic and
+            sell immediately </label
+          ><br />
+          <label
+            ><input type="radio" name="q6" value="2" disabled /> B. Feel worried
+            but stay calm </label
+          ><br />
+          <label
+            ><input type="radio" name="q6" value="3" disabled /> C. Closely
+            monitor and look for buying opportunities </label
+          ><br />
+          <label
+            ><input type="radio" name="q6" value="4" disabled /> D. Take
+            advantage of the volatility to invest more
+          </label>
+        </div>
 
-      <div class="question">
-        <p>7. Mục tiêu đầu tư về thời gian của bạn là:</p>
-        <label
-          ><input type="radio" name="q7" value="1" disabled /> A. Ngắn hạn (dưới 3 năm) </label
-        ><br />
-        <label
-          ><input type="radio" name="q7" value="2" disabled /> B. Trung hạn (3-5 năm) </label
-        ><br />
-        <label
-          ><input type="radio" name="q7" value="3" disabled /> C. Dài hạn (5-10 năm) </label
-        ><br />
-        <label
-          ><input type="radio" name="q7" value="4" disabled /> D. Rất dài hạn (trên 10
-          năm)
-        </label>
-      </div>
+        <div class="question">
+          <p>7. What is your investment time goal?</p>
+          <label
+            ><input type="radio" name="q7" value="1" disabled /> A. Short-term
+            (less than 3 years) </label
+          ><br />
+          <label
+            ><input type="radio" name="q7" value="2" disabled /> B. Medium-term
+            (3-5 years) </label
+          ><br />
+          <label
+            ><input type="radio" name="q7" value="3" disabled /> C. Long-term
+            (5-10 years) </label
+          ><br />
+          <label
+            ><input type="radio" name="q7" value="4" disabled /> D. Very
+            long-term (more than 10 years)
+          </label>
+        </div>
 
-      <div class="question">
-        <p>8. Trong bối cảnh kinh tế không ổn định, bạn sẽ:</p>
-        <label
-          ><input type="radio" name="q8" value="1" disabled /> A. Chuyển sang tài sản an
-          toàn (tiền mặt, trái phiếu) </label
-        ><br />
-        <label
-          ><input type="radio" name="q8" value="2" disabled /> B. Giữ nguyên danh mục và
-          theo dõi tình hình </label
-        ><br />
-        <label
-          ><input type="radio" name="q8" value="3" disabled /> C. Tìm cơ hội đầu tư vào
-          cổ phiếu bị giảm giá </label
-        ><br />
-        <label
-          ><input type="radio" name="q8" value="4" disabled /> D. Mua vào thêm mạnh mẽ vì
-          tin thị trường sẽ phục hồi
-        </label>
-      </div>
+        <div class="question">
+          <p>8. In an unstable economic environment, you will:</p>
+          <label
+            ><input type="radio" name="q8" value="1" disabled /> A. Switch to
+            safe assets (cash, bonds) </label
+          ><br />
+          <label
+            ><input type="radio" name="q8" value="2" disabled /> B. Maintain
+            your portfolio and monitor the situation </label
+          ><br />
+          <label
+            ><input type="radio" name="q8" value="3" disabled /> C. Look for
+            investment opportunities in undervalued stocks </label
+          ><br />
+          <label
+            ><input type="radio" name="q8" value="4" disabled /> D. Buy more
+            aggressively because you believe the market will recover
+          </label>
+        </div>
 
-      <div class="question">
-        <p>
-          9. Khi có cơ hội đầu tư mạo hiểm với tiềm năng lợi nhuận lớn, bạn sẽ:
-        </p>
-        <label
-          ><input type="radio" name="q9" value="1" disabled /> A. Từ chối vì không muốn
-          mạo hiểm </label
-        ><br />
-        <label
-          ><input type="radio" name="q9" value="2" disabled /> B. Cân nhắc và đầu tư một
-          phần nhỏ </label
-        ><br />
-        <label
-          ><input type="radio" name="q9" value="3" disabled /> C. Đầu tư nếu có sự tư vấn
-          và nghiên cứu đầy đủ </label
-        ><br />
-        <label
-          ><input type="radio" name="q9" value="4" disabled /> D. Đầu tư mà không do dự
-        </label>
-      </div>
+        <div class="question">
+          <p>
+            9. When faced with a high-risk investment opportunity with great
+            profit potential, you will:
+          </p>
+          <label
+            ><input type="radio" name="q9" value="1" disabled /> A. Decline
+            because you don't want to take risks </label
+          ><br />
+          <label
+            ><input type="radio" name="q9" value="2" disabled /> B. Consider it
+            and invest a small amount </label
+          ><br />
+          <label
+            ><input type="radio" name="q9" value="3" disabled /> C. Invest if
+            there is proper consultation and thorough research </label
+          ><br />
+          <label
+            ><input type="radio" name="q9" value="4" disabled /> D. Invest
+            without hesitation
+          </label>
+        </div>
 
-      <div class="question">
-        <p>10. Bạn tự đánh giá khả năng chấp nhận rủi ro của mình là:</p>
-        <label
-          ><input type="radio" name="q10" value="1" disabled /> A. Rất thấp – ưu tiên an
-          toàn tuyệt đối </label
-        ><br />
-        <label
-          ><input type="radio" name="q10" value="2" disabled /> B. Thấp – không muốn biến
-          động quá lớn </label
-        ><br />
-        <label
-          ><input type="radio" name="q10" value="3" disabled /> C. Trung bình – sẵn sàng
-          chịu rủi ro vừa phải để có lợi nhuận tốt hơn </label
-        ><br />
-        <label
-          ><input type="radio" name="q10" value="4" disabled /> D. Cao – sẵn sàng mạo hiểm
-          để đạt được lợi nhuận vượt trộ
-        </label>
-      </div>
-    </form>
-    
-    <div class="result" id="result">Đang tải kết quả...</div>
-    <button class="back-btn" onclick="goBack()">⬅ Quay lại</button>
+        <div class="question">
+          <p>10. How would you assess your risk tolerance?</p>
+          <label
+            ><input type="radio" name="q10" value="1" disabled /> A. Very low –
+            prioritize absolute safety </label
+          ><br />
+          <label
+            ><input type="radio" name="q10" value="2" disabled /> B. Low – do
+            not want major fluctuations </label
+          ><br />
+          <label
+            ><input type="radio" name="q10" value="3" disabled /> C. Moderate –
+            willing to take some risk for better returns </label
+          ><br />
+          <label
+            ><input type="radio" name="q10" value="4" disabled /> D. High –
+            ready to take risks for outstanding profits
+          </label>
+        </div>
+      </form>
+
+      <div class="result" id="result">Đang tải kết quả...</div>
+    </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch("answers.json")
-                .then(response => response.json())
-                .then(data => {
-                    let totalScore = 0;
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("answers.json")
+          .then((response) => response.json())
+          .then((data) => {
+            let totalScore = 0;
 
-                    for (let key in data) {
-                        let radioInput = document.querySelector(`input[name="${key}"][value="${data[key]}"]`);
-                        if (radioInput) {
-                            radioInput.checked = true;
-                            totalScore += parseInt(data[key]);
-                        }
-                    }
+            for (let key in data) {
+              let radioInput = document.querySelector(
+                `input[name="${key}"][value="${data[key]}"]`
+              );
+              if (radioInput) {
+                radioInput.checked = true;
+                totalScore += parseInt(data[key]);
+              }
+            }
 
-                    let riskLevel = totalScore <= 17 ? "Thấp" : totalScore <= 27 ? "Trung Bình" : "Cao";
-                    document.getElementById("result").innerText = "Tổng điểm: " + totalScore + " - Mức độ rủi ro: " + riskLevel;
-                })
-                .catch(error => {
-                    document.getElementById("result").innerText = "Lỗi khi tải dữ liệu!";
-                    console.error("Lỗi:", error);
-                });
-        });
-            function goBack() {
-                window.history.back();
-            }   
+            let riskLevel =
+              totalScore <= 17
+                ? "Thấp"
+                : totalScore <= 27
+                ? "Trung Bình"
+                : "Cao";
+            document.getElementById("result").innerText =
+              "Tổng điểm: " + totalScore + " - Mức độ rủi ro: " + riskLevel;
+          })
+          .catch((error) => {
+            document.getElementById("result").innerText =
+              "Lỗi khi tải dữ liệu!";
+            console.error("Lỗi:", error);
+          });
+      });
     </script>
-</body>
+  </body>
 </html>
