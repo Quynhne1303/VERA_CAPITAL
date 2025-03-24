@@ -34,6 +34,7 @@
         margin: 0;
       }
       nav ul li {
+        position: relative;
         padding: 0 15px;
       }
       nav ul li a {
@@ -81,16 +82,43 @@
       ul {
         padding-left: 20px;
       }
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #444;
+        min-width: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+    .submenu li {
+        padding: 10px;
+    }
+    .submenu li a {
+        color: white;
+        display: block;
+        padding: 10px;
+    }
+    .submenu li a:hover {
+        background-color: #666;
+    }
+    .has-submenu:hover .submenu {
+        display: block;
+    }
     </style>
   </head>
   <body>
     <nav>
       <ul>
         <li><a href="../index.html">Giới Thiệu Công Ty</a></li>
-        <li><a href="customer.html">Giới Thiệu Thông Tin Khách Hàng</a></li>
-        <li>
-          <a href="../Survey/survey.html">Kết quả bảng khảo sát khách hàng</a>
-        </li>
+        <li class="has-submenu">
+          <a href="#">Khách Hàng</a>
+          <ul class="submenu">
+              <li><a href="customer.html">Thông Tin Khách Hàng</a></li>
+              <li><a href="../Survey/survey.html">Kết Quả Khảo Sát</a></li>
+          </ul>
+      </li>
         <li><a href="../portfolio.html">Danh Mục Đầu Tư</a></li>
         <li><a href="../analysis.html">Kết Quả Phân Tích</a></li>
         <li><a href="../chart.html">Biểu Đồ</a></li>
