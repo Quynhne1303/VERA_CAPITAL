@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet The Team - Công Ty XYZ</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Open-Sans, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Helvetica Neue, Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+      nav {
+        width: 100%;
+        height: 60px;
+        background-color: #333;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 0 20px;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+      nav ul li {
+        position: relative;
+        padding: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 15px 10px;
+      }
+      nav ul li a:hover {
+        background-color: #555;
+        border-radius: 5px;
+      }
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #444;
+        min-width: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+      .submenu li {
+        padding: 10px;
+      }
+      .submenu li a {
+        color: white;
+        display: block;
+        padding: 10px;
+      }
+      .submenu li a:hover {
+        background-color: #666;
+      }
+      .has-submenu:hover .submenu {
+        display: block;
+      }
+      .content {
+        padding: 80px 20px;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-image: url("../img/bg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .team-container {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 900px;
+        text-align: center;
+      }
+      .team-container h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+      .team-member {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: #fff;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .team-member img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .team-member div {
+        text-align: left;
+      }
+      .team-member h3 {
+        font-size: 20px;
+        margin: 0;
+        color: #222;
+      }
+      .team-member p {
+        font-size: 16px;
+        margin: 5px 0 0;
+        color: #666;
+      }
+
+      /* Hiển thị logo trên thanh điều hướng khi cuộn */
+      .nav-logo {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: auto;
+        transition: all 0.3s ease-in-out;
+        opacity: 0; /* Ẩn logo ban đầu */
+      }
+      .nav-logo.visible {
+        opacity: 1;
+      }
+
+      /* Ẩn logo trong phần Meet The Team khi cuộn */
+      .team-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+      .team-header img {
+        width: 80px;
+        height: auto;
+        transition: all 0.3s ease-in-out;
+      }
+      .shrink .team-header img {
+        opacity: 0; /* Ẩn logo khi cuộn */
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img
+        id="nav-logo"
+        class="nav-logo"
+        src="../img/logo.png"
+        alt="Company Logo"
+      />
+      <ul>
+        <li><a href="../Home/index.html">Home</a></li>
+        <li class="has-submenu">
+          <a href="#">About Us</a>
+          <ul class="submenu">
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="about_the_fund.html">About The Fund</a></li>
+            <li><a href="meet_the_team.html">Meet The Team</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Customers</a>
+          <ul class="submenu">
+            <li><a href="../Customer/customer.html">Customer Information</a></li>
+            <li><a href="../Survey/survey.html">Survey Results</a></li>
+          </ul>
+        </li>
+        <li><a href="portfolio.html">Products</a></li>
+        <li><a href="analysis.html">Investment Knowledge</a></li>
+        <li><a href="chart.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <div class="team-container">
+        <div class="team-header">
+          <img src="../img/logo.png" alt="Company Logo" />
+          <h1>Meet The Team</h1>
+        </div>
+        <div class="team-member">
+          <div>
+            <h3>Le Nguyen Anh Duy</h3>
+            <p>Chief Investment Officer - CIO</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div>
+            <h3>Dinh Lan Huong</h3>
+            <p>Head of Research</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div>
+            <h3>Nguyen Thi My Le</h3>
+            <p>Financial/Data Analyst</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div>
+            <h3>Nguyen Thi Quynh Nga</h3>
+            <p>Risk Manager</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div>
+            <h3>Bui Huynh Nhu</h3>
+            <p>Investor Relations Manager</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div>
+            <h3>Le Tran Yen Nhi</h3>
+            <p>Operations Manager</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        var logo = document.getElementById("nav-logo");
+        var teamHeader = document.querySelector(".team-header");
+
+        if (window.scrollY > teamHeader.offsetTop + 50) {
+          logo.classList.add("visible");
+          teamHeader.classList.add("shrink");
+        } else {
+          logo.classList.remove("visible");
+          teamHeader.classList.remove("shrink");
+        }
+      });
+    </script>
+  </body>
+</html>

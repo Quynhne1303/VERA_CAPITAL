@@ -23,7 +23,6 @@
         background-position: center;
         background-attachment: fixed; /* Giữ cố định khi cuộn */
       }
-      
 
       nav {
         width: 100%;
@@ -109,41 +108,54 @@
         min-width: 200px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         border-radius: 5px;
-    }
-    .submenu li {
+      }
+      .submenu li {
         padding: 10px;
-    }
-    .submenu li a {
+      }
+      .submenu li a {
         color: white;
         display: block;
         padding: 10px;
-    }
-    .submenu li a:hover {
+      }
+      .submenu li a:hover {
         background-color: #666;
-    }
-    .has-submenu:hover .submenu {
+      }
+      .has-submenu:hover .submenu {
         display: block;
-    }
+      }
     </style>
   </head>
   <body>
     <nav>
       <ul>
-        <li><a href="../index.html">Giới Thiệu Công Ty</a></li>
+        <li><a href="../Home/index.html">Home</a></li>
         <li class="has-submenu">
-          <a href="#">Khách Hàng</a>
+          <a href="#">About Us</a>
           <ul class="submenu">
-              <li><a href="../Customer/customer.html">Thông Tin Khách Hàng</a></li>
-              <li><a href="survey.html">Kết Quả Khảo Sát</a></li>
+            <li><a href="../About_us/introduction.html">Introduction</a></li>
+            <li>
+              <a href="../About_us/about_the_fund.html">About The Fund</a>
+            </li>
+            <li><a href="../About_us/meet_the_team.html">Meet The Team</a></li>
           </ul>
-      </li>
-        <li><a href="../portfolio.html">Danh Mục Đầu Tư</a></li>
-        <li><a href="../analysis.html">Kết Quả Phân Tích</a></li>
-        <li><a href="../chart.html">Biểu Đồ</a></li>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Customers</a>
+          <ul class="submenu">
+            <li>
+              <a href="../Customer/customer.html">Customer Information</a>
+            </li>
+            <li><a href="survey.html">Survey Results</a></li>
+          </ul>
+        </li>
+        <li><a href="../portfolio.html">Products</a></li>
+        <li><a href="../analysis.html">Investment Knowledge</a></li>
+        <li><a href="../chart.html">Contact</a></li>
       </ul>
     </nav>
+
     <div class="content">
-      <h2>Khảo Sát Mức Độ Rủi Ro</h2>
+      <h2>Risk Assessment Survey</h2>
       <form id="surveyForm">
         <div class="question">
           <p>1. What is your investment goal?</p>
@@ -379,13 +391,9 @@
             }
 
             let riskLevel =
-              totalScore <= 17
-                ? "Thấp"
-                : totalScore <= 27
-                ? "Trung Bình"
-                : "Cao";
+              totalScore <= 17 ? "Low" : totalScore <= 27 ? "Medium" : "High";
             document.getElementById("result").innerText =
-              "Tổng điểm: " + totalScore + " - Mức độ rủi ro: " + riskLevel;
+              "Score: " + totalScore + " - Level of risk: " + riskLevel;
           })
           .catch((error) => {
             document.getElementById("result").innerText =
