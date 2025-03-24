@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,46 +11,52 @@
         box-sizing: border-box;
       }
       body {
-        display: flex;
         font-family: Open-Sans, -apple-system, BlinkMacSystemFont, Segoe UI,
           Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
           Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
       }
       nav {
-        width: 250px;
+        width: 100%;
+        height: 60px;
         background-color: #333;
         color: white;
-        height: 100vh;
-        padding-top: 20px;
         position: fixed;
         top: 0;
         left: 0;
-        overflow-y: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       nav ul {
         list-style: none;
+        display: flex;
         padding: 0;
+        margin: 0;
       }
       nav ul li {
-        padding: 15px;
+        padding: 0 15px;
       }
       nav ul li a {
         color: white;
         text-decoration: none;
         display: block;
+        padding: 15px 10px;
       }
       nav ul li a:hover {
         background-color: #555;
+        border-radius: 5px;
       }
       .content {
-        flex: 1;
         padding: 20px;
+        margin-top: 60px; /* Đẩy nội dung xuống để không bị che bởi thanh điều hướng */
+        min-height: 100vh;
+        background-image: url("../img/bg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f4f4f9;
-        margin-left: 250px;
+        align-items: flex-start;
+        justify-content: flex-start;
       }
       .container {
         max-width: 600px;
