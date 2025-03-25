@@ -26,10 +26,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 1000;
       }
       nav ul {
         list-style: none;
         display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0;
         margin: 0;
       }
@@ -47,9 +50,72 @@
         background-color: #555;
         border-radius: 5px;
       }
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #444;
+        min-width: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+      .submenu li {
+        padding: 10px;
+      }
+      .submenu li a {
+        color: white;
+        display: block;
+        padding: 10px;
+      }
+      .submenu li a:hover {
+        background-color: #666;
+      }
+      .has-submenu:hover .submenu {
+        display: block;
+      }
+
+      .menu-toggle {
+        display: none;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+      }
+
+      @media screen and (max-width: 768px) {
+        nav ul {
+          display: none;
+          flex-direction: column;
+          background-color: #333;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          text-align: center;
+        }
+        nav ul.show {
+          display: flex;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .submenu {
+          position: static;
+          background-color: #555;
+          width: 100%;
+          text-align: center;
+          display: none;
+        }
+        .has-submenu.active .submenu {
+          display: block;
+        }
+      }
+
       .content {
         padding: 20px;
-        margin-top: 60px; /* Đẩy nội dung xuống để không bị che bởi thanh điều hướng */
+        margin-top: 60px;
         min-height: 100vh;
         background-image: url("../img/bg.jpg");
         background-size: cover;
@@ -82,34 +148,11 @@
       ul {
         padding-left: 20px;
       }
-      .submenu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #444;
-        min-width: 200px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-    }
-    .submenu li {
-        padding: 10px;
-    }
-    .submenu li a {
-        color: white;
-        display: block;
-        padding: 10px;
-    }
-    .submenu li a:hover {
-        background-color: #666;
-    }
-    .has-submenu:hover .submenu {
-        display: block;
-    }
     </style>
   </head>
   <body>
     <nav>
+      <div class="menu-toggle">&#9776;</div>
       <ul>
         <li><a href="../index.html">Home</a></li>
         <li class="has-submenu">
@@ -123,15 +166,13 @@
         <li class="has-submenu">
           <a href="#">Customers</a>
           <ul class="submenu">
-            <li>
-              <a href="customer.html">Customer Information</a>
-            </li>
+            <li><a href="customer.html">Customer Information</a></li>
             <li><a href="../Survey/survey.html">Survey Results</a></li>
           </ul>
         </li>
-        <li><a href="../portfolio.html">Products</a></li>
-        <li><a href="../analysis.html">Investment Knowledge</a></li>
-        <li><a href="../chart.html">Contact</a></li>
+        <li><a href="../products.html">Products</a></li>
+        <li><a href="../investment_knowledge.html">Investment Knowledge</a></li>
+        <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="content">
@@ -164,6 +205,18 @@
           </li>
         </ul>
       </div>
-    </div>
+      <script>
+        document
+        .querySelector(".menu-toggle")
+        .addEventListener("click", function () {
+          document.querySelector("nav ul").classList.toggle("show");
+        });
+      document.querySelectorAll(".has-submenu > a").forEach((item) => {
+        item.addEventListener("click", function (e) {
+          e.preventDefault();
+          this.parentElement.classList.toggle("active");
+        });
+      });
+      </script>
   </body>
 </html>
