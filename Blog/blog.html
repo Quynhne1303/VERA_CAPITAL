@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới Thiệu - Công Ty XYZ</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Open-Sans, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        margin: 20px;
+        padding: 0;
+        color: #333;
+      }
+      nav {
+        width: 100%;
+        height: 60px;
+        background-color: #333;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+      }
+      nav ul li {
+        position: relative;
+        padding: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 15px 10px;
+      }
+      nav ul li a:hover {
+        background-color: #555;
+        border-radius: 5px;
+      }
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #444;
+        min-width: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+      .submenu li {
+        padding: 10px;
+      }
+      .submenu li a {
+        color: white;
+        display: block;
+        padding: 10px;
+      }
+      .submenu li a:hover {
+        background-color: #666;
+      }
+      .has-submenu:hover .submenu {
+        display: block;
+      }
+      .p1 {
+        margin-top: 30px;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+      }
+      .menu-toggle {
+        display: none;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+      }
+
+      @media screen and (max-width: 768px) {
+        nav ul {
+          display: none;
+          flex-direction: column;
+          background-color: #333;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          text-align: center;
+        }
+        nav ul.show {
+          display: flex;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .submenu {
+          position: static;
+          background-color: #555;
+          width: 100%;
+          text-align: center;
+          display: none;
+        }
+        .has-submenu.active .submenu {
+          display: block;
+        }
+      }
+      header {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        margin-top: 20pt;
+        color: #d63384;
+      }
+
+      h2 {
+        color: #007bff;
+      }
+
+      h3 {
+        color: #17a2b8;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 20px;
+      }
+
+      ul li {
+        margin: 5px 0;
+      }
+
+      .a1 {
+        color: #d63384;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .a1:hover {
+        text-decoration: underline;
+      }
+
+      section {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      hr {
+        border: 1px solid #ddd;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="menu-toggle">&#9776;</div>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li class="has-submenu">
+          <a href="#">About Us</a>
+          <ul class="submenu">
+            <li><a href="../About_us/introduction.html">Introduction</a></li>
+            <li>
+              <a href="../About_us/about_the_fund.html">About The Fund</a>
+            </li>
+            <li><a href="../About_us/meet_the_team.html">Meet The Team</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Investor Survey</a>
+          <ul class="submenu">
+            <li>
+              <a href="../Investor/investor.html">Customers</a>
+            </li>
+            <li><a href="../Survey/survey.html">Survey Results</a></li>
+          </ul>
+        </li>
+        <li><a href="../products.html">Products & Service</a></li>
+        <li><a href="blog.html">Blog & Market News</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>📢 BLOG & MARKET NEWS</h1>
+      <h2>🌟 Stay Updated – Invest Smarter</h2>
+      <p>
+        Welcome to <strong>VERA Capital's Blog & Market News!</strong> We
+        provide in-depth analysis, the latest updates on the stock market,
+        economic trends, and investment insights to help you make informed
+        financial decisions.
+      </p>
+      <p>📅 <a class="a1" href="#">Latest Updates: Read Now</a></p>
+      <p>
+        📩
+        <a class="a1" href="#"
+          >Subscribe to Market Insights via Email: Sign Up Here</a
+        >
+      </p>
+    </header>
+
+    <hr />
+
+    <section>
+      <h2>📍 1. STOCK MARKET, ECONOMIC UPDATES & INVESTMENT TRENDS</h2>
+
+      <h3>⭐ Today's Market Highlights</h3>
+      <ul>
+        <li>📈 VN-Index movements, market liquidity, and smart money flows.</li>
+        <li>💡 Key events influencing the stock market.</li>
+      </ul>
+
+      <h3>📊 Economic Policies & Their Impact</h3>
+      <ul>
+        <li>
+          📉 Analysis of monetary policies, interest rates, and GDP growth.
+        </li>
+        <li>🔄 How policy changes affect different industries.</li>
+      </ul>
+
+      <h3>🚀 Emerging Investment Trends</h3>
+      <ul>
+        <li>
+          🌱 Long-term trends such as technology, renewable energy, and digital
+          finance.
+        </li>
+        <li>
+          📌 Investment opportunities in stocks, bonds, real estate, and
+          commodities.
+        </li>
+      </ul>
+
+      <h3>📰 Featured Articles:</h3>
+      <ul>
+        <li>
+          📌 <a class="a1" href="#">VN-Index Hits 1,300 Points: What's Next?</a>
+        </li>
+        <li>
+          📌
+          <a class="a1" href="#"
+            >Fed Maintains Interest Rates: What Should Investors Do?</a
+          >
+        </li>
+        <li>
+          📌
+          <a class="a1" href="#"
+            >Renewable Energy Stocks – A Long-Term Opportunity?</a
+          >
+        </li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>📍 2. STOCK ANALYSIS & COMPANY REPORTS</h2>
+      <h3>📌 Technical Analysis</h3>
+
+      <ul>
+        <li>📊 Identifying stock price trends through chart patterns.</li>
+        <li>📌 Key indicators: RSI, MACD, Bollinger Bands.</li>
+      </ul>
+
+      <h3>📌 Fundamental Analysis</h3>
+      <ul>
+        <li>
+          💰 Evaluating financial health, profitability, and growth potential of
+          companies.
+        </li>
+        <li>📉 Key ratios: P/E, P/B, ROE, EPS.</li>
+      </ul>
+
+      <h3>📌 Industry Reports</h3>
+      <ul>
+        <li>
+          🏦 Macro analysis of major industries such as banking, real estate,
+          and technology.
+        </li>
+        <li>
+          📈 Insights on opportunities and risks for different stock sectors.
+        </li>
+      </ul>
+
+      <h3>📰 Featured Articles:</h3>
+      <ul>
+        <li>
+          📌
+          <a class="a1" href="#"
+            >VNM Stock: A Buying Opportunity or Further Decline?</a
+          >
+        </li>
+        <li>
+          📌
+          <a class="a1" href="#"
+            >MBB Reports Record Profits – Is the Stock Still Attractive?</a
+          >
+        </li>
+        <li>
+          📌
+          <a class="a1" href="#"
+            >Is the Real Estate Market Recovering? Insights on KDH & REF</a
+          >
+        </li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>📍 3. INVESTMENT GUIDES FOR BEGINNERS</h2>
+
+      <h3>📌 How to Read Stock Market Charts & Identify Trends</h3>
+      <ul>
+        <li>📜 Explanation of stock market symbols and key trends.</li>
+        <li>📌 Recognizing price patterns & market sentiment.</li>
+      </ul>
+
+      <h3>📌 Smart Investment Strategies for Beginners</h3>
+      <ul>
+        <li>📊 How to build an investment portfolio based on risk appetite.</li>
+        <li>💡 Portfolio diversification and maximizing returns.</li>
+      </ul>
+
+      <h3>📌 Risk Management & Portfolio Optimization</h3>
+      <ul>
+        <li>
+          📏 Tools to calculate expected returns and manage investment risks.
+        </li>
+        <li>
+          📌 Key strategies for stop-loss, profit-taking, and rebalancing a
+          portfolio.
+        </li>
+      </ul>
+
+      <h3>📰 Featured Articles:</h3>
+      <ul>
+        <li>
+          📌
+          <a class="a1" href="#"
+            >How to Build an Optimal Investment Portfolio</a
+          >
+        </li>
+        <li>
+          📌
+          <a class="a1" href="#">How to Pick Good Stocks: 5 Key Principles</a>
+        </li>
+        <li>
+          📌
+          <a class="a1" href="#"
+            >Basic Technical Analysis – How to Spot Buy/Sell Signals</a
+          >
+        </li>
+      </ul>
+      <section>
+        <h2>📍 🌟 STAY AHEAD WITH THE LATEST UPDATES!</h2>
+
+        <p>
+          📧 <a class="a1" href="#">Subscribe to Market Insights via Email</a>
+        </p>
+
+        <p>
+          📢 Follow VERA Capital on our official channels to never miss an
+          investment opportunity!
+        </p>
+
+        <p>
+          ⭐ <a class="a1" href="#">Facebook</a> |
+          <a class="a1" href="#">LinkedIn</a> |
+          <a class="a1" href="#">YouTube</a> | <a class="a1" href="#">Zalo</a>
+        </p>
+      </section>
+    </section>
+    <script>
+      document
+        .querySelector(".menu-toggle")
+        .addEventListener("click", function () {
+          document.querySelector("nav ul").classList.toggle("show");
+        });
+
+      document.querySelectorAll(".has-submenu > a").forEach((item) => {
+        item.addEventListener("click", function (e) {
+          e.preventDefault();
+          this.parentElement.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>

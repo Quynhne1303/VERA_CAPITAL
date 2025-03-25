@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giới Thiệu - Công Ty XYZ</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Giới Thiệu & Góp Ý - Công Ty XYZ</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
       * {
         margin: 0;
@@ -13,7 +13,8 @@
       }
       body {
         font-family: Open-Sans, -apple-system, BlinkMacSystemFont, Segoe UI,
-          Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+          Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+          Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
         background-color: #f4f4f4;
       }
       nav {
@@ -74,41 +75,99 @@
         display: block;
       }
       .content {
-        padding: 80px 20px;
-        min-height: 100vh;
+        padding: 100px 20px;
         display: flex;
-        justify-content: center;
         flex-direction: column;
-        background-image: url("img/bg.jpg");
+        align-items: center;
+        background-image: url("../img/bg.jpg");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
       }
       .text-container {
-        background: rgba(255, 255, 255, 0.8);
-        padding: 30px;
+        width: 90%;
+        max-width: 700px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 25px;
         border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        max-width: 800px;
-      }
-      .text-container h1 {
-        font-size: 50px;
-        margin-bottom: 15px;
-        color: #333;
-      }
-      .text-container p {
-        font-size: 20px;
-        color: #555;
-        line-height: 1.6;
-      }
-      .p1 {
-        margin-top: 30px;
-      }
-      img {
-        width: 100px;
-        height: 100px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         margin-bottom: 20px;
       }
+      .container {
+        width: 100%;
+        max-width: 500px;
+        background: linear-gradient(135deg, #f8b2b2, #f0f0f0);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      .container:hover {
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+      
+      h2 {
+        color: #333;
+        margin-bottom: 15px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      
+      input,
+      textarea {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        background: #fff;
+        box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+      }
+      
+      input:focus,
+      textarea:focus {
+        outline: none;
+        box-shadow: 0 0 8px rgba(40, 167, 69, 0.7);
+      }
+      
+      textarea {
+        height: 120px;
+      }
+      
+      button {
+        width: 100%;
+        background: linear-gradient(135deg, #ff7b00, #ff5100);
+        color: white;
+        border: none;
+        padding: 14px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      button:hover {
+        background: linear-gradient(135deg, #ff5100, #e64500);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(255, 81, 0, 0.5);
+      }
+      
+      button:active {
+        transform: translateY(1px);
+        box-shadow: none;
+      }
+      
+      button:disabled {
+        background: gray;
+        cursor: not-allowed;
+      }
+      
+      
       .menu-toggle {
         display: none;
         font-size: 30px;
@@ -146,13 +205,82 @@
           display: block;
         }
       }
+      label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+      }
+      
+      label input {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+        margin-top: 10px; /* Khoảng cách với phần trên */
+        margin-bottom: 10px;
+      }
+      
+      .checkbox-container input {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        margin: 0; /* Loại bỏ khoảng trắng mặc định */
+      }
+      /* Hiển thị logo trên thanh điều hướng khi cuộn */
+      .nav-logo {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: auto;
+        transition: all 0.3s ease-in-out;
+        opacity: 0; /* Ẩn logo ban đầu */
+      }
+      .nav-logo.visible {
+        opacity: 1;
+        left: 10px;
+      }
+
+      /* Ẩn logo trong phần Meet The Team khi cuộn */
+      .team-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+      .team-header img {
+        width: 80px;
+        height: auto;
+        transition: all 0.3s ease-in-out;
+      }
+      .shrink .team-header img {
+        opacity: 0; /* Ẩn logo khi cuộn */
+      }
     </style>
   </head>
   <body>
     <nav>
       <div class="menu-toggle">&#9776;</div>
+      <img
+        id="nav-logo"
+        class="nav-logo"
+        src="img/logo2.png"
+        alt="Company Logo"
+      />
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="../index.html">Home</a></li>
         <li class="has-submenu">
           <a href="#">About Us</a>
           <ul class="submenu">
@@ -162,33 +290,88 @@
           </ul>
         </li>
         <li class="has-submenu">
-          <a href="#">Customers</a>
+          <a href="#">Investor Survey</a>
           <ul class="submenu">
             <li>
-              <a href="Customer/customer.html">Customer Information</a>
+              <a href="../Investor/investor.html">Customers</a>
             </li>
-            <li><a href="Survey/survey.html">Survey Results</a></li>
+            <li><a href="../Survey/survey.html">Survey Results</a></li>
           </ul>
         </li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="investment_knowledge.html">Investment Knowledge</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="../products.html">Products & Service</a></li>
+        <li><a href="Blog/blog.html">Blog & Market News</a></li>
+        <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
+
     <div class="content">
       <div class="text-container">
-        <img src="img/logo.png" alt="" />
-        <h1>ABOUT THE FUND</h1>
+        <img src="img/logo.png" alt="Logo" width="150" />
         <p>
-          Founded in 1990, Vera Capital has built a strong foundation based on
-          core values, combining global expertise, deep local market insights,
-          and extensive experience. We are committed to delivering superior
-          long-term investment performance, making us a trusted partner for both
-          domestic and international investors seeking opportunities in Vietnam.
+          <strong>Địa chỉ:</strong> Tòa nhà Vera Tower, Quận 1, TP.HCM <br />
+          <strong>Hotline:</strong> 0909 123 456 <br />
+          <strong>Email:</strong> contact@veracapital.com <br />
+          <strong>Website:</strong> www.veracapital.com
         </p>
       </div>
+
+      <div class="container">
+        <h2>Góp Ý</h2>
+        <input type="text" id="name" placeholder="Họ và tên" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <textarea id="feedback" placeholder="Nhập góp ý của bạn..." required></textarea>
+        <label class="checkbox-container">
+          <input type="checkbox" id="terms" /> Tôi đồng ý với điều khoản
+        </label>
+        <button id="sendButton" disabled>Gửi yêu cầu</button>
+      </div>
     </div>
+
     <script>
+      emailjs.init("NAJ-K72wy247FPSjg");
+
+      document.getElementById("terms").addEventListener("change", function () {
+        document.getElementById("sendButton").disabled = !this.checked;
+      });
+
+      document.getElementById("sendButton").addEventListener("click", function () {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const feedback = document.getElementById("feedback").value.trim();
+        const currentTime = new Date().toLocaleString("vi-VN");
+
+        if (!name || !email || !feedback) {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+          return;
+        }
+
+        const templateParams = {
+          from_name: name,
+          from_email: email,
+          message: feedback,
+          time: currentTime,
+        };
+
+        emailjs
+          .send("service_u1ksg8a", "template_yigmww4", templateParams)
+          .then(() => {
+            alert("🎉 Gửi góp ý thành công! Chúng tôi sẽ phản hồi sớm nhất.");
+          })
+          .catch((error) => {
+            alert("❌ Gửi thất bại, vui lòng thử lại!");
+            console.error(error);
+          });
+      });
+      window.addEventListener("scroll", function () {
+        var logo = document.getElementById("nav-logo");
+      
+        if (window.scrollY > 100) {
+          logo.classList.add("visible");
+        } else {
+          logo.classList.remove("visible");
+        }
+      });
+      
       document
         .querySelector(".menu-toggle")
         .addEventListener("click", function () {

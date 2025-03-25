@@ -135,10 +135,33 @@
         padding: 15px;
         background-color: #28a745;
         color: white;
-        font-size: 18px;
+        font-size: 28px;
         font-weight: bold;
         text-align: center;
         border-radius: 5px;
+      }
+      .survey-container {
+        display: flex;
+        justify-content: space-between; /* Canh đều khoảng cách giữa các button */
+        gap: 10px; /* Tạo khoảng cách giữa hai button */
+      }
+      .survey-btn {
+        flex: 1; /* Để các button có kích thước bằng nhau */
+        padding: 10px;
+        font-size: 16px;
+        background-color: #ff0000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-align: center;
+        margin-top: 15pt;
+        width: 49.7%;
+      }
+
+      .survey-btn:hover {
+        background-color: #2980b9;
       }
     </style>
   </head>
@@ -158,16 +181,16 @@
           </ul>
         </li>
         <li class="has-submenu">
-          <a href="#">Customers</a>
+          <a href="#">Investor Survey</a>
           <ul class="submenu">
             <li>
-              <a href="../Customer/customer.html">Customer Information</a>
+              <a href="../Investor/investor.html">Customers</a>
             </li>
             <li><a href="survey.html">Survey Results</a></li>
           </ul>
         </li>
-        <li><a href="../products.html">Products</a></li>
-        <li><a href="../investment_knowledge.html">Investment Knowledge</a></li>
+        <li><a href="../products.html">Products & Service</a></li>
+        <li><a href="../Blog/blog.html">Blog & Market News</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -387,6 +410,17 @@
         </div>
       </form>
       <div class="result" id="result">Đang tải kết quả...</div>
+      <div class="survey_container">
+        <button
+          class="survey-btn"
+          onclick="location.href='../Investment/Investment.html'"
+        >
+          Go to Recommended Investment Portfo
+        </button>
+        <button class="survey-btn" onclick="downloadExcel()">
+          Download summary of personalized analysis
+        </button>
+      </div>
     </div>
     <script>
       document
@@ -427,6 +461,9 @@
             console.error("Lỗi:", error);
           });
       });
+      function downloadExcel() {
+        window.location.href = '../Data/NHOM6_QLDMDT.xlsx'; // Đường dẫn đến file Excel
+      }
     </script>
   </body>
 </html>

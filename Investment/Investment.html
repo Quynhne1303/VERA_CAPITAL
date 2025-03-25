@@ -79,7 +79,7 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
-        background-image: url("img/bg.jpg");
+        background-image: url("../img/bg.jpg");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -146,46 +146,54 @@
           display: block;
         }
       }
+      .content {
+        padding: 80px 20px;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: url("../img/bg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
     </style>
   </head>
   <body>
     <nav>
       <div class="menu-toggle">&#9776;</div>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="../index.html">Home</a></li>
         <li class="has-submenu">
           <a href="#">About Us</a>
           <ul class="submenu">
-            <li><a href="About_us/introduction.html">Introduction</a></li>
-            <li><a href="About_us/about_the_fund.html">About The Fund</a></li>
-            <li><a href="About_us/meet_the_team.html">Meet The Team</a></li>
+            <li><a href="../About_us/introduction.html">Introduction</a></li>
+            <li><a href="../About_us/about_the_fund.html">About The Fund</a></li>
+            <li><a href="../About_us/meet_the_team.html">Meet The Team</a></li>
           </ul>
         </li>
         <li class="has-submenu">
-          <a href="#">Customers</a>
+          <a href="#">Investor Survey</a>
           <ul class="submenu">
             <li>
-              <a href="Customer/customer.html">Customer Information</a>
+              <a href="../Investor/investor.html">Customers</a>
             </li>
-            <li><a href="Survey/survey.html">Survey Results</a></li>
+            <li><a href="../Survey/survey.html">Survey Results</a></li>
           </ul>
         </li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="investment_knowledge.html">Investment Knowledge</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="../products.html">Products & Service</a></li>
+        <li><a href="../Blog/blog.html">Blog & Market News</a></li>
+        <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="content">
       <div class="text-container">
-        <img src="img/logo.png" alt="" />
-        <h1>ABOUT THE FUND</h1>
-        <p>
-          Founded in 1990, Vera Capital has built a strong foundation based on
-          core values, combining global expertise, deep local market insights,
-          and extensive experience. We are committed to delivering superior
-          long-term investment performance, making us a trusted partner for both
-          domestic and international investors seeking opportunities in Vietnam.
-        </p>
+        <img src="../img/logo.png" alt="" />
+        Địa chỉ: Tòa nhà Vera Tower, Quận 1, TP.HCM <br>
+        Hotline: 0909 123 456 <br>
+        Email: contact@veracapital.com <br>
+        Website: www.veracapital.com
       </div>
     </div>
     <script>

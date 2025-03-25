@@ -135,7 +135,7 @@
       h2,
       h3 {
         color: #2c3e50;
-        border-bottom: 2px solid #3498db;
+        border-bottom: 2px solid #000000;
         padding-bottom: 5px;
       }
       .info {
@@ -148,6 +148,23 @@
       ul {
         padding-left: 20px;
       }
+      .survey-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        font-size: 16px;
+        background-color: #ff0000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .survey-btn:hover {
+        background-color: #2980b9;
+      }
     </style>
   </head>
   <body>
@@ -159,19 +176,21 @@
           <a href="#">About Us</a>
           <ul class="submenu">
             <li><a href="../About_us/introduction.html">Introduction</a></li>
-            <li><a href="../About_us/about_the_fund.html">About The Fund</a></li>
+            <li>
+              <a href="../About_us/about_the_fund.html">About The Fund</a>
+            </li>
             <li><a href="../About_us/meet_the_team.html">Meet The Team</a></li>
           </ul>
         </li>
         <li class="has-submenu">
-          <a href="#">Customers</a>
+          <a href="#">Investor Survey</a>
           <ul class="submenu">
-            <li><a href="customer.html">Customer Information</a></li>
+            <li><a href="investor.html">Customers</a></li>
             <li><a href="../Survey/survey.html">Survey Results</a></li>
           </ul>
         </li>
-        <li><a href="../products.html">Products</a></li>
-        <li><a href="../investment_knowledge.html">Investment Knowledge</a></li>
+        <li><a href="../products.html">Products & Service</a></li>
+        <li><a href="../Blog/blog.html">Blog & Market News</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -204,9 +223,16 @@
             diversified or optimized it.
           </li>
         </ul>
+        <button
+          class="survey-btn"
+          onclick="location.href='../Survey/survey.html'"
+        >
+          Go to Survey
+        </button>
       </div>
-      <script>
-        document
+    </div>
+    <script>
+      document
         .querySelector(".menu-toggle")
         .addEventListener("click", function () {
           document.querySelector("nav ul").classList.toggle("show");
@@ -217,6 +243,6 @@
           this.parentElement.classList.toggle("active");
         });
       });
-      </script>
+    </script>
   </body>
 </html>
