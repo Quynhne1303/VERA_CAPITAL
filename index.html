@@ -125,8 +125,6 @@
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
-        display: flex;
-        flex-direction: column;
       }
       .container {
         max-width: 600px;
@@ -184,17 +182,6 @@
       .form-container button:hover {
         background-color: #00932f;
       }
-      .form-container label {
-        display: flex;
-        align-items: center;
-        gap: 8px; /* Khoảng cách giữa checkbox và văn bản */
-        cursor: pointer;
-      }
-
-      .form-container input[type="checkbox"] {
-        width: 16px;
-        height: 16px;
-      }
     </style>
   </head>
   <body>
@@ -236,20 +223,6 @@
           </p>
         </section>
       </div>
-      <div class="form-container">
-        <h2>Liên Hệ Ngay</h2>
-        <input type="text" placeholder="Tên" />
-        <input type="email" placeholder="Email" />
-        <textarea placeholder="Lời nhắn"></textarea>
-        <label>
-          <input type="checkbox" /> Tôi muốn nhận các thông tin liên quan
-        </label>
-        <button id="submitForm">Đăng ký</button>
-        <p>
-          Bằng việc đăng ký, tôi xác nhận rằng thông tin trên là đúng và tôi
-          đồng ý với chính sách bảo mật.
-        </p>
-      </div>
     </div>
 
     <script>
@@ -272,50 +245,6 @@
           container.classList.remove("scrolled");
         }
       });
-      document
-        .getElementById("submitForm")
-        .addEventListener("click", function () {
-          var name = document.querySelector(
-            ".form-container input[type='text']"
-          ).value;
-          var email = document.querySelector(
-            ".form-container input[type='email']"
-          ).value;
-          var message = document.querySelector(
-            ".form-container textarea"
-          ).value;
-          var subscribe = document.querySelector(
-            ".form-container input[type='checkbox']"
-          ).checked;
-
-          if (name && email && message) {
-            fetch(
-              "https://script.google.com/macros/s/AKfycbzmpilwCWsd0hjGUZ8PNOnufWCd0yD7TGHU8xtJ_vP0MGi9pB64xXIDPfQV7e6zlhbzig/exec",
-              {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, message, subscribe }),
-              }
-            )
-              .then((response) => response.text())
-              .then((data) => {
-                alert("Thông tin đã được gửi!");
-                document.querySelector(
-                  ".form-container input[type='text']"
-                ).value = "";
-                document.querySelector(
-                  ".form-container input[type='email']"
-                ).value = "";
-                document.querySelector(".form-container textarea").value = "";
-                document.querySelector(
-                  ".form-container input[type='checkbox']"
-                ).checked = false;
-              })
-              .catch((error) => alert("Có lỗi xảy ra, vui lòng thử lại!"));
-          } else {
-            alert("Vui lòng điền đầy đủ thông tin.");
-          }
-        });
     </script>
   </body>
 </html>
