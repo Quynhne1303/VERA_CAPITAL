@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giới Thiệu - Công Ty XYZ</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>VERA CAPITAL</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
       body {
         font-family: Open-Sans, -apple-system, BlinkMacSystemFont, Segoe UI,
           Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+        margin: 20px;
+        padding: 20px;
         background-color: #f4f4f4;
+        background-image: url("../img/bg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2 {
+        color: #333;
+      }
+      .stock {
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+      }
+      .stock:last-child {
+        border-bottom: none;
+      }
+      .show-more {
+        color: blue;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .hidden {
+        display: none;
       }
       nav {
         width: 100%;
@@ -73,42 +101,6 @@
       .has-submenu:hover .submenu {
         display: block;
       }
-      .content {
-        padding: 80px 20px;
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        background-image: url("../img/bg.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-      }
-      .text-container {
-        background: rgba(255, 255, 255, 0.8);
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        max-width: 800px;
-      }
-      .text-container h1 {
-        font-size: 50px;
-        margin-bottom: 15px;
-        color: #333;
-      }
-      .text-container p {
-        font-size: 20px;
-        color: #555;
-        line-height: 1.6;
-      }
-      .p1 {
-        margin-top: 30px;
-      }
-      img {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 20px;
-      }
       .menu-toggle {
         display: none;
         font-size: 30px;
@@ -146,30 +138,57 @@
           display: block;
         }
       }
-      .content {
-        padding: 80px 20px;
-        min-height: 100vh;
+      /* Hiển thị logo trên thanh điều hướng khi cuộn */
+      .nav-logo {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: auto;
+        transition: all 0.3s ease-in-out;
+        opacity: 0; /* Ẩn logo ban đầu */
+      }
+      .nav-logo.visible {
+        opacity: 1;
+      }
+
+      /* Ẩn logo trong phần Meet The Team khi cuộn */
+      .team-header {
         display: flex;
-        justify-content: center;
         align-items: center;
-        text-align: center;
-        background-image: url("../img/bg.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+      .team-header img {
+        width: 80px;
+        height: auto;
+        transition: all 0.3s ease-in-out;
+      }
+      .shrink .team-header img {
+        opacity: 0; /* Ẩn logo khi cuộn */
       }
     </style>
   </head>
   <body>
     <nav>
       <div class="menu-toggle">&#9776;</div>
+      <img
+        id="nav-logo"
+        class="nav-logo"
+        src="../img/logo2.png"
+        alt="Company Logo"
+      />
       <ul>
         <li><a href="../index.html">Home</a></li>
         <li class="has-submenu">
           <a href="#">About Us</a>
           <ul class="submenu">
             <li><a href="../About_us/introduction.html">Introduction</a></li>
-            <li><a href="../About_us/about_the_fund.html">About The Fund</a></li>
+            <li>
+              <a href="../About_us/about_the_fund.html">About The Fund</a>
+            </li>
             <li><a href="../About_us/meet_the_team.html">Meet The Team</a></li>
           </ul>
         </li>
@@ -187,16 +206,185 @@
         <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
-    <div class="content">
-      <div class="text-container">
-        <img src="../img/logo.png" alt="" />
-        Địa chỉ: Tòa nhà Vera Tower, Quận 1, TP.HCM <br>
-        Hotline: 0909 123 456 <br>
-        Email: contact@veracapital.com <br>
-        Website: www.veracapital.com
+    <div class="container">
+      <div class="team-container">
+        <div class="team-header">
+          <img src="../img/logo.png" alt="Company Logo" />
+          <h1>Personalized Analysis</h1>
+        </div>
+      </div>
+      <p>Dear valued customer,</p>
+      <p>
+        Today, Vera Capital is pleased to introduce three potential stocks
+        carefully selected based on your current investment needs. These are
+        prominent companies well-suited for investors seeking sustainable profit
+        opportunities. Specifically, we present:
+      </p>
+
+      <div class="stock">
+        <h2>Kinh Bac City Development Holding Corporation (KBC)</h2>
+        <p><strong>Financial Goals for Upcoming Years</strong></p>
+        <p>
+          <b>Rental Area in 2025</b>: KBC aims to achieve over 200 hectares from
+          industrial parks (IPs) such as Nam Son Hap Linh, Tan Phu Trung, Hung
+          Yen Industrial Cluster, and Trang Due 3 IP. <br />
+          <b>Revenue</b>: To be generated from social housing projects in Nenh
+          Town and Trang Due Urban Area. <br />
+          <b>Business Targets for 2025</b>: Consolidated revenue of VND 10,000
+          billion and after-tax profit of VND 3,200 billion, nearly 7 times
+          higher than in 2024, reflecting strong growth expectations.
+        </p>
+        <p class="show-more" onclick="toggleDetails('kbc-details')">
+          Show More
+        </p>
+        <div id="kbc-details" class="hidden">
+          <p><strong>Financial Ratios (2020-2024)</strong></p>
+          <p>
+            <b>P/E Ratio</b>: High and volatile (ranging from 10.72 to 51.18)
+            <br />
+            <b>EPS</b>: Unstable (ranging from VND 0.48 to VND 2.65). <br />
+            <b>ROE</b>: Fluctuating (2.1% to 10.67%). <br />
+            <b>D/A Ratio</b>: Decreasing, safer than the industry average.
+            <br />
+          </p>
+          <p><strong>Strengths</strong></p>
+          <p>
+            Large land bank with strategic locations and a reputable brand.
+            <br />
+            Strong ability to attract foreign direct investment (FDI). <br />
+            Safe financial structure with a low D/A ratio. <br />
+            High P/E ratio, indicating market confidence. <br />
+          </p>
+          <p><strong>Risks</strong></p>
+          <p>
+            Volatile profits, heavily dependent on project progress. <br />
+            Exposure to macroeconomic factors (FDI, real estate cycles). <br />
+            Pressure to maintain growth to meet market expectations. <br />
+            Low D/A ratio may limit leverage opportunities. <br />
+          </p>
+        </div>
+      </div>
+
+      <div class="stock">
+        <h2>REE Corporation</h2>
+        <p><strong>Financial Goals for Upcoming Years</strong></p>
+        <p>
+          <b>2025 Targets</b>: Achieve a profit of VND 2,400 billion and
+          increase energy capacity by 100 MW, focusing on renewable energy.
+          Office rental revenue is expected to reach VND 1,267 billion, up
+          18.5%.
+        </p>
+        <p class="show-more" onclick="toggleDetails('ree-details')">
+          Show More
+        </p>
+        <div id="ree-details" class="hidden">
+          <p><strong>Financial Ratios (2020-2024)</strong></p>
+          <p>
+            <b>P/E Ratio</b>: Decreased from 2020 to 2022, then rose sharply to
+            15.2 in 2024, higher than the industry average. <br />
+            <b>EPS</b>: Increased from 2020 to 2022, then dropped to VND 4.47 in
+            2024, below the industry average. <br />
+            <b>ROE</b>: Increased from 2020 to 2022, then decreased to 9.22% in
+            2024, below the industry average. <b>D/A Ratio</b>: Fluctuated,
+            decreasing to 38.25% in 2024, lower than the industry average.
+            <br />
+          </p>
+          <p><strong>Strengths</strong></p>
+          <p>
+            Historically strong operational efficiency (higher ROE and EPS than
+            the industry). <br />
+            Safe financial structure with low debt. <br />
+            Growth potential in renewable energy and real estate. <br />
+          </p>
+          <p><strong>Risks</strong></p>
+          <p>
+            Declining efficiency in 2024 (lower ROE and EPS). <br />
+            Sensitivity to macroeconomic factors (interest rates, inflation) and
+            intense competition. <br />
+          </p>
+        </div>
+      </div>
+
+      <div class="stock">
+        <h2>FPT Corporation</h2>
+        <p><strong>Financial Goals</strong></p>
+        <p>
+          <b>2025 Targets:</b> <br />
+          Revenue of VND 75,400 billion, up 20% year-over-year (YoY). <br />
+          Pre-tax profit of VND 13,395 billion, up 21% YoY, setting a new record
+          for Vietnam’s leading technology company. <br />
+          FPT Telecom aims for revenue of VND 19,900 billion (up 13%) and
+          pre-tax profit of VND 4,200 billion (up 17%). <br />
+        </p>
+        <p class="show-more" onclick="toggleDetails('fpt-details')">
+          Show More
+        </p>
+        <div id="fpt-details" class="hidden">
+          <p><strong>Financial Ratios (2020-2024)</strong></p>
+          <p>
+            <b>P/E Ratio</b>: Increased from 12.44 to 26.74, indicating high
+            expectations but potential volatility risk. <br />
+            <b>EPS</b>: Rose from VND 4,744 to VND 5,703, surpassing the
+            industry average. <br />
+            <b>ROE</b>: Increased from 19.99% to 23.93%, reflecting strong
+            capital efficiency. <br />
+            <b>D/A Ratio</b>: Decreased from 55.42% to 50.38%, indicating
+            prudent debt management. <br />
+          </p>
+          <p><strong>Strengths</strong></p>
+          <p>
+            Stable EPS growth, enhancing investor confidence. <br />
+            High and growing ROE, demonstrating superior capital efficiency.
+            <br />
+            Reduced debt reliance (D/A ratio), lowering financial risk. <br />
+            Increasing P/E ratio, reflecting high expectations for sustainable
+            growth. <br />
+          </p>
+          <p><strong>Risks</strong></p>
+          <p>
+            Market volatility: Macroeconomic factors, stock market fluctuations,
+            and technology sector changes may impact performance. <br />
+            Intense competition in the technology sector, requiring continuous
+            innovation. <br />
+            Financial leverage risk: Despite a decreasing D/A ratio, debt
+            management remains crucial amid interest rate fluctuations. <br />
+            Operational challenges: Rapid technological changes and large
+            project management require high adaptability. <br />
+          </p>
+        </div>
+        <p>
+          <b
+            >This analysis provides a clear and comprehensive overview of KBC,
+            REE, and FPT, tailored to your investment needs. Each stock offers
+            unique strengths and opportunities, balanced against specific risks,
+            allowing you to make informed decisions aligned with your financial
+            goals.</b
+          >
+        </p>
       </div>
     </div>
+
     <script>
+      window.addEventListener("scroll", function () {
+        var logo = document.getElementById("nav-logo");
+        var teamHeader = document.querySelector(".team-header");
+
+        if (window.scrollY > teamHeader.offsetTop + 50) {
+          logo.classList.add("visible");
+          teamHeader.classList.add("shrink");
+        } else {
+          logo.classList.remove("visible");
+          teamHeader.classList.remove("shrink");
+        }
+      });
+      function toggleDetails(id) {
+        var details = document.getElementById(id);
+        if (details.classList.contains("hidden")) {
+          details.classList.remove("hidden");
+        } else {
+          details.classList.add("hidden");
+        }
+      }
       document
         .querySelector(".menu-toggle")
         .addEventListener("click", function () {
